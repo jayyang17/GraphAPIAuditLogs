@@ -1,0 +1,13 @@
+data_output:
+  root_dir: output
+  shared_path: a
+
+graph_api:
+  client_id: later
+  client_secret: gAAAAABnTqU3-d1ceEhQZ6ThkutCXyXEWPg13IiBqZHEgnC60Vf4gR5oPfWKIB9gr7A-pzntClw0CPzTw1ibZtFsQzzDT5swGQ==
+  endpoint: https://graph.microsoft.com/v1.0/
+  tenant_id: later
+  
+# AUTHORITY = f'https://login.microsoftonline.com/{TENANT_ID}'
+# SCOPE = ['https://graph.microsoft.com/.default']
+# user_email = "rmgremit@rafflesmedical.com"  

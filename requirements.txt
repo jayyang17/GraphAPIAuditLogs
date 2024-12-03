@@ -1,0 +1,13 @@
+cryptography
+msal
+requests
+pandas
+notebook
+numpy
+matplotlib
+python-box
+pyYAML
+ensure
+joblib
+types-pyYAML
+python-dotenv
