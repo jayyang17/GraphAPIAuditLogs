@@ -3,6 +3,7 @@ from src.email_license.extraction.extraction import authenticate_graph_api, fetc
 
 if __name__=="__main__":
     try:
+        logger.info("Starting scheduled log extraction...")
         logger.info("Authenticating with MS Graph API")
         token = authenticate_graph_api()
 
