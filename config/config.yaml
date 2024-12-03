@@ -1,13 +1,10 @@
 data_output:
   root_dir: output
-  shared_path: a
+  shared_path: yourpath
 
 graph_api:
-  client_id: later
-  client_secret: gAAAAABnTqU3-d1ceEhQZ6ThkutCXyXEWPg13IiBqZHEgnC60Vf4gR5oPfWKIB9gr7A-pzntClw0CPzTw1ibZtFsQzzDT5swGQ==
+  client_id: yourid
+  client_secret: your_encrypted_secret_key_from_fernet.py
   endpoint: https://graph.microsoft.com/v1.0/
-  tenant_id: later
+  tenant_id: yourtenantid
   
-# AUTHORITY = f'https://login.microsoftonline.com/{TENANT_ID}'
-# SCOPE = ['https://graph.microsoft.com/.default']
-# user_email = "rmgremit@rafflesmedical.com"  
