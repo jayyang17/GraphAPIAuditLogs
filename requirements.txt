@@ -11,3 +11,4 @@ ensure
 joblib
 types-pyYAML
 python-dotenv
+ipykernel

@@ -14,15 +14,6 @@ def main():
         # Load environment variables
         load_dotenv()
 
-
-        # Retrieve Fernet key from configuration
-        # config = ConfigurationManager()
-        # api_config = config.get_api_config()
-
-        # encrypt_config = config.get_encrypt_config()
-        # encrypt = encrypt_config.app_secret_key
-        # print(encrypt)
-
         # Load the Fernet key
         fernet_key = os.getenv("FERNET_KEY")
         if not fernet_key:
@@ -38,16 +29,16 @@ def main():
 
         encrypted_password = fernet.encrypt(new_password.encode()).decode()
 
+        # Initialize the config manager
+        config = ConfigurationManager()
+        api_config = config.get_api_config()
 
-        # Update the YAML file
-        config = read_yaml(CONFIG_FILE_PATH)
+        # Update the client secret 
+        updated_api_config = api_config
+        updated_api_config.client_secret = encrypted_password
 
-        # api_config.client_secret = encrypted_password
-        config["graph_api"]["client_secret"] = encrypted_password
+        config.update_api_config(updated_api_config)
         
-        # Read and update the existing YAML file
-        write_yaml(config, CONFIG_FILE_PATH)
-
         print("Password encrypted and YAML file updated successfully.")
     except Exception as e:
         print(f"Error: {e}")

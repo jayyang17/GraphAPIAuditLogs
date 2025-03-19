@@ -6,6 +6,8 @@ import joblib
 from ensure import ensure_annotations
 from pathlib import Path
 from typing import Any
+from datetime import datetime
+import pandas as pd
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path):
@@ -50,3 +52,21 @@ def write_yaml(data, path_to_yaml: Path):
         raise e
 
 
+def save_to_csv(data:dict, output_path, filename):
+    """Save users with detailed information to a CSV file using Pandas."""
+
+    os.makedirs(output_path, exist_ok=True)  # Ensure directory exists
+    if not output_path:
+        logger.error("Output path or shared path is missing!")
+        return
+    if data:
+        # Convert to DataFrame
+        df = pd.DataFrame(data)
+        timestamp = datetime.now().strftime("%Y%m%d")
+
+        output_file = os.path.join(output_path, f"{filename}_{timestamp}.csv")
+        df.to_csv(output_file, index=False)
+
+        logger.info(f"Audit logs saved to {output_file}")
+    else:
+        logger.error("No data to save")

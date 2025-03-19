@@ -1,5 +1,5 @@
 from src.email_license.constants import *
-from src.email_license.utils.common import read_yaml
+from src.email_license.utils.common import read_yaml, write_yaml
 from src.email_license.config.config_entity import (ApiConfig, OutputConfig)
 
 class ConfigurationManager:
@@ -15,7 +15,9 @@ class ConfigurationManager:
             endpoint=config["endpoint"],
             client_id=config["client_id"],
             client_secret=config["client_secret"],
-            tenant_id=config["tenant_id"]
+            tenant_id=config["tenant_id"],
+            authority=config["authority"].format(tenant_id=config["tenant_id"]),
+            scope=config["scope"]
         )
         
         return api_config
@@ -29,3 +31,15 @@ class ConfigurationManager:
         )
 
         return output_config
+    
+    def update_api_config(self, updated_config: ApiConfig):
+        """Update the API configuration in the YAML file"""
+        self.config["graph_api"] ={
+            "endpoint": updated_config.endpoint,
+            "client_id": updated_config.client_id,
+            "client_secret": updated_config.client_secret,
+            "tenant_id": updated_config.tenant_id
+        }
+        write_yaml(self.config, CONFIG_FILE_PATH)
+
+
