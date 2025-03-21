@@ -1,6 +1,6 @@
 # Graph API Directory Extraction
 
-This project provides tools to extract audit logs from the Microsoft Graph API, process them, and store the results in CSV format for analysis.
+This project provides tools to extract Directory data from the Microsoft Graph API, process them, and store the results in CSV format for analysis.
 
 ## Features
 
@@ -11,10 +11,9 @@ This project provides tools to extract audit logs from the Microsoft Graph API, 
 
 ## Prerequisites
 
-- **Python 3.8+**: Ensure Python is installed on your system.
 - **Microsoft Entra ID (Azure AD)**: Access to an Azure AD tenant with appropriate permissions.
 - **Microsoft Graph API Permissions**:
-  - `AuditLog.Read.All`
+  - `Directory.Read.All`
   - `User.Read.All`
 
 ## Setup
