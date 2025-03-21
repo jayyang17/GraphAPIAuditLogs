@@ -5,7 +5,7 @@ This project provides tools to extract Directory data from the Microsoft Graph A
 ## Features
 
 - **Authentication**: Securely authenticate with the Microsoft Graph API using OAuth 2.0.
-- **Audit Log Retrieval**: Fetch audit logs, including sign-in and directory audit logs.
+- **Directory Retrieval**: Fetch sign-in and directory audit logs.
 - **Data Processing**: Process and filter logs to extract relevant information.
 - **CSV Export**: Save processed logs into CSV files for easy analysis.
 
