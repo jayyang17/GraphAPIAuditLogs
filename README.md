@@ -1,4 +1,4 @@
-# Graph API Audit Logs Extraction
+# Graph API Directory Extraction
 
 This project provides tools to extract audit logs from the Microsoft Graph API, process them, and store the results in CSV format for analysis.
 
